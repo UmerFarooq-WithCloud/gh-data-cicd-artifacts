@@ -26,6 +26,14 @@ jobs:
         run: npm ci 
       - name: build web
         run: npm run build
+      - uses: actions/upload-artifacts@v3 
+        with:
+            name: artifacts-upload
+            path: |
+             package.json
+             index.html
+
+
 
   deploy:
     needs: build
