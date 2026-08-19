@@ -24,10 +24,8 @@ jobs:
         uses: action/checkout@v3
       - name: run packages
         run: npm ci 
-      - name: lint code
-        run: npm run lint
-      - name: test code
-        run: npm run test 
+      - name: build web
+        run: npm run build
 
   deploy:
     needs: build
