@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: get first-code
-        run:  actions/checkout@v3
+        uses:  actions/checkout@v3
       - name: install packages
         run:  npm ci 
       - name: run npm lint
@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: get code 
-        run: action/checkout@v3
+        uses: action/checkout@v3
       - name: run packages
         run: npm ci 
       - name: lint code
