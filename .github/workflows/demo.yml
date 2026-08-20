@@ -26,19 +26,23 @@ jobs:
         run: npm ci 
       - name: build web
         run: npm run build
-      - uses: actions/upload-artifact@v7 
+      - uses: actions/upload-artifact@v3
         with:
             name: artifacts-upload
             path: |
              package.json
              index.html
-
-
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: download artifacts 
+        uses: action/download-artifact@v3
+        with:
+            name: artifacts-upload
+      - name: output artifacts     
+        run:  ls
+
       - name: deploy code
         run: echo "deploying code......."
 
