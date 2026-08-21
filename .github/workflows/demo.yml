@@ -30,7 +30,7 @@ jobs:
         run: npm run build
       - name: public job output
         id:  publish
-        run:  find diskfolder/*. -type f -execdir echo 'file-script={}' >> $GITHUB_OUTPUT ';'
+        run:  find diskfolder/*.js -type f -execdir echo 'file-script={}' >> $GITHUB_OUTPUT ';'
 
 
       - uses: actions/upload-artifact@v4
