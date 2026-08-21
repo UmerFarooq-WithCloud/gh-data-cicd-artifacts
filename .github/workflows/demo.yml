@@ -47,7 +47,8 @@ jobs:
             name: artifacts-upload
       - name: output artifacts     
         run:  ls
-
+      - name: outputfile 
+        run: echo "${{ needs.build.outputs.file-script }}"
       - name: deploy code
         run: echo "deploying code........"
 
